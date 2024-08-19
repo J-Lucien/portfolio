@@ -23,6 +23,9 @@ header .navbar .logo-wrapper .logo {
   margin: 0;
   font-size: 16px;
 }
+header .navbar .logo-wrapper .logo span {
+  color: var(--primary);
+}
 header .navbar .nav-list {
   list-style: none;
   margin: 0;
@@ -111,7 +114,8 @@ main .main-container .quote blockquote {
   margin: 0;
   padding: 32px;
 }
-main .main-container .quote blockquote::before, main .main-container .quote blockquote::after {
+main .main-container .quote blockquote::before,
+main .main-container .quote blockquote::after {
   content: '"';
   position: absolute;
   font-style: italic;
@@ -155,7 +159,7 @@ main .main-container .quote figcaption {
 .social-links-line {
   height: 191px;
   width: 1px;
-  background-color: var(--gray);
+  background-color: var(--primary);
   /* display: block; */
 }
 
@@ -166,6 +170,14 @@ main .main-container .quote figcaption {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.social-links ul li a img {
+  transition: filter 0.3s ease;
+  filter: invert(29%) sepia(48%) saturate(1517%) hue-rotate(246deg) brightness(95%) contrast(86%);
+}
+.social-links ul li a img:hover {
+  -webkit-filter: contrast(85%) brightness(200%) saturate(75%) sepia(22%);
+  filter: contrast(85%) brightness(200%) saturate(75%) sepia(22%);
 }
 
 /* Project section */
@@ -215,7 +227,8 @@ main .main-container .quote figcaption {
   align-items: start;
 }
 
-.project-card, .project-card img {
+.project-card,
+.project-card img {
   border: 1px solid var(--gray);
 }
 
@@ -298,8 +311,19 @@ main .main-container .quote figcaption {
 /* .about-text{
     max-width: 515px;
 } */
-.about-text p {
+.about-text p, .hero-content p {
   margin-bottom: 27px;
+}
+.about-text a, .hero-content a {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--primary);
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+.about-text a:hover, .hero-content a:hover {
+  background-color: var(--primary);
 }
 
 .about-content img {
@@ -323,7 +347,7 @@ main .main-container .quote figcaption {
 }
 
 .contacts-content p {
-  max-width: 505px;
+  max-width: 560px;
   margin-top: 0;
 }
 
@@ -348,6 +372,11 @@ main .main-container .quote figcaption {
   color: var(--gray);
   margin-top: 8px;
 }
+.contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
 /* Footer section */
 footer {
@@ -359,6 +388,15 @@ footer {
 .footer-container {
   max-width: 1024px;
   margin: 0 auto;
+}
+.footer-container .figma {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid var(--gray);
+  align-items: center;
+}
+.footer-container .figma p {
+  padding-left: 16px;
 }
 
 .footer-content {
@@ -396,10 +434,21 @@ footer {
   margin-top: 16px;
 }
 
+.footer-media {
+  margin-bottom: 8px;
+}
 .footer-media h3 {
   font-size: 24px;
   margin-top: 0;
   margin-bottom: 12px;
+}
+.footer-media a {
+  transition: filter 0.3s ease;
+  filter: invert(29%) sepia(48%) saturate(1517%) hue-rotate(246deg) brightness(95%) contrast(86%);
+}
+.footer-media a:hover {
+  -webkit-filter: contrast(85%) brightness(200%) saturate(75%) sepia(22%);
+  filter: contrast(85%) brightness(200%) saturate(75%) sepia(22%);
 }
 
 .copyright {
@@ -455,7 +504,8 @@ footer {
   .hero-img {
     padding: 0 22px;
   }
-  .hero-img img, .portfolio-note-wrapper {
+  .hero-img img,
+  .portfolio-note-wrapper {
     width: 100%;
   }
   .quote blockquote {
@@ -465,7 +515,10 @@ footer {
   .quote figcaption {
     font-size: 18px;
   }
-  .section-header h2::after, .project-left-image, .about-left-image, .contact-left-image {
+  .section-header h2::after,
+  .project-left-image,
+  .about-left-image,
+  .contact-left-image {
     display: none;
   }
   .project-cards {
@@ -493,7 +546,8 @@ footer {
   .skills-content img {
     display: none;
   }
-  .skills-content, .skills-card {
+  .skills-content,
+  .skills-card {
     flex-direction: column;
   }
   .about-content {

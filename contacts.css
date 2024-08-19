@@ -217,6 +217,12 @@ footer{
 .contact-info{
     display: flex;
     align-items: center;
+
+    a{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
 }
 
 /* media section */
